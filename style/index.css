@@ -17,10 +17,14 @@ a{
     padding: 0;
     color: #fff;
 }
+/*Header y nav bar*/
 .header {
     width: 100%;
     height: fit-content;
     overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    top: 0;
 }
 
 .nav{
@@ -33,7 +37,7 @@ a{
 }
 
 .nav_iconContainer, .nav__button{
-    padding: 15px 30px;
+    padding: 5px 30px;
 }
 .nav_iconContainer{
     font-weight: 600;
@@ -63,6 +67,64 @@ a{
     color: #fff;
 }
 
+.nav__search:hover{
+    color: var(--marked-text);
+}
+/*Barra de búsqueda de nav*/
+.search-bar{
+    background-color: var(--background-color-trans);
+    width: 100%;
+    display: none;
+    padding: 10px 0;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9;
+}
+
+.search-bar__input{
+    width: 80%;
+    justify-self: center;
+    outline: none;
+    padding: 5px 10px;
+    border: solid var(--font-grey) 1px;
+    border-radius: 10px 10px 0 0;
+}
+
+.search-bar__boxSearch{
+    margin: 0;
+    background-color: #fff;
+    width: calc(80% + 20px);
+    padding: 0;
+    overflow: hidden;
+    border-radius: 0 0 10px 10px;
+    outline: solid var(--font-grey) 1px;
+}
+
+.search-bar__results{
+    width: 100%;
+    color: var(--font-grey);
+    list-style-type: none; 
+    margin: 2px 0;
+    font-size: 16px;
+}
+
+.search-bar__link{
+    display: flex;
+    width: 100%;
+    color: var(--font-grey);
+    padding: 10px 20px;
+    list-style-type: none; 
+}
+
+.search-bar__link:hover{
+    background-color: var(--marked-text);
+}
+
+.search-bar__icon{
+    margin: 0 5px;
+}
 /*Slider acá se verán las 5 más vistas*/
 .slider-top{
     width: 100%;
@@ -71,6 +133,8 @@ a{
     position: relative;
     display: flex;
     flex-flow: column nowrap;
+    overflow: hidden;
+    margin-top: 46px;
 }
 .slider-top__container{
     width: 500%;
@@ -81,7 +145,7 @@ a{
     overflow: hidden;
     height: 200%;
     transition: all .5s ease;
-    transform: translateX(0);
+    
 }
 .slider-top__top{
     width: calc(100%/2);
@@ -123,12 +187,14 @@ a{
     margin: 0;
     padding: 10px 0;
 }
+
 .slider-top__year{
     font-size: 30px;
     font-style: italic;
     color: var(--font-grey);
     margin: 0;
 }
+
 .slider-top__summaryTitle{
     display: block;
     font-size: 20px;
@@ -154,6 +220,10 @@ a{
     padding: 10px;
     margin: 5px 10px;
     border-radius: 100%;
+    cursor: pointer;
+}
+.slider-top__point.active{
+    background-color: #f0f0f0;
 }
 
 /*Sección popolar movies */
