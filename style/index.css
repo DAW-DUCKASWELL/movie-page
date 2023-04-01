@@ -1,0 +1,192 @@
+:root{
+    --background-color: #146C94;
+    --marked-text: #F9F54B;
+    --background-color-trans: #146c9480;
+    --font-grey: #b6b6b6;
+    --font-onWhite: #205E61;
+}
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+html, body{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.header {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.nav{
+    background-color: var(--background-color);
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--marked-text);
+}
+
+.nav_iconContainer, .nav__button{
+    padding: 15px 30px;
+}
+.nav_iconContainer{
+    font-weight: 600;
+    display: flex;
+    flex-flow: row nowrap;
+    color: #fff;
+    font-size: 30px;
+}
+
+.nav__icon::first-letter{
+    color: var(--marked-text);
+}
+
+.nav_icon--club::first-letter{
+    color: var(--marked-text);
+}
+
+.nav__button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+.nav__search {
+    color: #fff;
+}
+
+/*Slider acá se verán las 5 más vistas*/
+.slider-top{
+    background-color: var(--background-color-trans);
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.slider-top__backdrop{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--background-color) no-repeat;
+    overflow: hidden;
+    object-position: center;
+    object-fit: cover;
+}
+
+.slider-top__img{
+    width: 200px;
+    border-radius: 15px;
+    padding: 10px;
+    
+    
+}
+
+.slider-top__div{
+    width: 60%;
+    flex: .7 0 auto;
+    color: #fff;
+    flex-flow: column wrap;
+}
+
+.slider-top__title{
+    font-size: 60px;
+    margin: 0;
+    padding: 10px 0;
+}
+.slider-top__year{
+    font-size: 30px;
+    font-style: italic;
+    color: var(--font-grey);
+    margin: 0;
+}
+.slider-top__summaryTitle{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/*Sección popolar movies */
+.popular-movies{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+}
+
+.popular-movies__div{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    padding: 10px;
+    color: var(--font-onWhite);
+}
+.popular-movies__div a{
+    color: var(--font-onWhite);
+}
+.popular-movies__link-poster{
+    display: flex;
+    justify-content: center;
+}
+.popular-movies__img{
+    width: 60%;
+    border-radius: 5px;
+    
+    
+}
+.popular-movies__title{
+    font-size: 20px;
+    margin: 10px 0;
+    margin-bottom: 3px;
+    align-self: center;
+}
+.popular-movies__year{
+    margin: 0;
+    align-self: center;
+    font-style: italic;
+}
+
+.popular-movies__btnChangePage{
+    width: 100%;
+    grid-column: 1/end;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.popular-movies__btnChangePage-previous, .popular-movies__btnChangePage-next{
+    margin: 0 10px;
+    color: #fff;
+    background-color: var(--background-color);
+    border: none;
+    padding: 15px 20px ;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--background-color);
+    border-top: 1px solid var(--marked-text);
+    display: flex;
+    padding: 0 80px;
+    justify-content: space-evenly;
+}
+
+.nav__link--footer{
+    align-items: center;
+    padding: 0;
+}
+.footer__list{
+    list-style-type: none;
+}
