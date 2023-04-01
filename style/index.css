@@ -82,6 +82,10 @@ a{
     position: fixed;
     z-index: 9;
 }
+.search-bar.active{
+    display: flex;
+}
+
 
 .search-bar__input{
     width: 80%;
@@ -93,6 +97,7 @@ a{
 }
 
 .search-bar__boxSearch{
+    display: none;
     margin: 0;
     background-color: #fff;
     width: calc(80% + 20px);
@@ -100,6 +105,9 @@ a{
     overflow: hidden;
     border-radius: 0 0 10px 10px;
     outline: solid var(--font-grey) 1px;
+}
+.search-bar__boxSearch.active{
+    display: block;
 }
 
 .search-bar__results{
