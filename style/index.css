@@ -65,13 +65,34 @@ a{
 
 /*Slider acá se verán las 5 más vistas*/
 .slider-top{
-    background-color: var(--background-color-trans);
     width: 100%;
+    max-width: 100%;
+    height: 55%;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.slider-top__container{
+    width: 500%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    height: 200%;
+    transition: all .5s ease;
+    transform: translateX(0);
+}
+.slider-top__top{
+    width: calc(100%/2);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
+    position: relative;
+    overflow: hidden;
+    height: 200%;
+    background-color: var(--background-color-trans);
 }
-
 .slider-top__backdrop{
     display: flex;
     position: absolute;
@@ -80,16 +101,14 @@ a{
     z-index: -1;
     background: var(--background-color) no-repeat;
     overflow: hidden;
-    object-position: center;
-    object-fit: cover;
+    object-position: top;
+    object-fit:cover;
 }
 
 .slider-top__img{
     width: 200px;
     border-radius: 15px;
     padding: 10px;
-    
-    
 }
 
 .slider-top__div{
@@ -115,6 +134,26 @@ a{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+.slider-top__points{
+    background-color: transparent;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+}
+.slider-top__point{
+    width: 1px;
+    background-color: var(--font-grey);
+    padding: 10px;
+    margin: 5px 10px;
+    border-radius: 100%;
 }
 
 /*Sección popolar movies */
@@ -190,3 +229,4 @@ a{
 .footer__list{
     list-style-type: none;
 }
+
