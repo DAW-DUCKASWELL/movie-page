@@ -74,16 +74,18 @@ a{
 .search-bar{
     background-color: var(--background-color-trans);
     width: 100%;
-    display: none;
+    display: flex;
     padding: 10px 0;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 9;
+    z-index: 9;  
+    top: -100px;
+    transition: all .2s ease-in;
 }
 .search-bar.active{
-    display: flex;
+    top: 46px;
 }
 
 
@@ -93,7 +95,7 @@ a{
     outline: none;
     padding: 5px 10px;
     border: solid var(--font-grey) 1px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0; 
 }
 
 .search-bar__boxSearch{
@@ -238,7 +240,7 @@ a{
 .popular-movies{
     background-color: #fff;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(auto-fill, 1fr);
 }
 
@@ -267,6 +269,7 @@ a{
     margin: 10px 0;
     margin-bottom: 3px;
     align-self: center;
+    text-align: center;
 }
 .popular-movies__year{
     margin: 0;
@@ -290,7 +293,10 @@ a{
     border-radius: 20px;
     cursor: pointer;
 }
-
+.popular-movies__btnChangePage-previous:hover, .popular-movies__btnChangePage-next:hover{
+    background-color: var(--marked-text);
+    color: var(--background-color);
+}
 /*Footer*/
 .footer{
     background-color: var(--background-color);
@@ -298,6 +304,7 @@ a{
     display: flex;
     padding: 0 80px;
     justify-content: space-evenly;
+    height: 20%;
 }
 
 .nav__link--footer{
