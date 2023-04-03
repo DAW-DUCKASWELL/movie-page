@@ -54,4 +54,46 @@ const loadMovies = async () => {
     //catch muestra error de código NO EN LA PETICIÓN EN SI.
 }
 
+//TOP 5 RATED
+const topRated = async () =>{
+    try{
+        const response = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=45b49c30d379e8a24e7a536d9c44d2d9&language=es-VE`);
+        if(response.status === 200){
+            const data = await response.json()
+            let results = data.results.slice(0,5)
+            let movies = '';
+            results.forEach(movie =>{
+                let release_date = movie.release_date 
+                let year = release_date.split('-')
+                movies +=
+                `
+                <div class="slider-top__top">
+                    <img src="https://image.tmdb.org/t/p/w500/${movie.backdrop_path}" alt="Fondo relacionado a la pelicula." class="slider-top__backdrop">
+                    <a href="" class="slider-top__linkImg"><img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Aquí está el poster de una de las peliculas mejor valoradas." class="slider-top__img"></a>
+                    <div class="slider-top__div data">
+                        <h3 class="slider-top__title"><a href="#" class="slider-top__link">${movie.title}</a></h3>
+                        <p class="slider-top__year">${year[0]}</p>
+                        <br>
+                        <span class="slider-top__rate">${movie.vote_average}</span>
+                        <p class="slider-top__summary"><span class="slider-top__summaryTitle">Vista general</span>${movie.overview}.</p>
+                    </div>
+                </div>
+                `
+            })
+            document.querySelector('.slider-top__container').innerHTML = movies;
+        }else if(response.status === 401){
+            console.log('No tienes acceso a la base de datos. Llave incorrecta.')
+        }else if(response.status ===404){
+            console.log('Lo siento, la película que buscas no existe.')
+        }else{
+            console.log('Unknow error!')
+        }
+    
+
+    }catch(error){
+        console.log(error)
+    }
+}
+
+topRated()
 loadMovies();
