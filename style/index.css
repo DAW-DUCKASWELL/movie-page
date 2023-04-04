@@ -362,8 +362,6 @@ a{
     border-bottom: 5px solid #fff;
     cursor:default;
 }
-
-
 /*Sección popolar movies */
 .popular-movies{
     background-color: transparent;
@@ -403,7 +401,7 @@ body.dark .popular-movies__link{
     
 }
 .popular-movies__title{
-    font-size: 20px;
+    font-size: 150%;
     margin: 10px 0;
     margin-bottom: 3px;
     align-self: center;
@@ -500,4 +498,3 @@ body.dark .popular-movies__link{
       transform: rotate(360deg);
     }
   }
-  
