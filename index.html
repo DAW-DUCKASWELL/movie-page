@@ -12,6 +12,7 @@
     <script src="scripts/slider.js" defer></script>
     <script src="scripts/searchBar.js" defer></script>
     <script src="scripts/app.js" defer></script>
+    <script src="scripts/darkmode.js" defer></script>
     <title>MovieClub</title>
 </head>
 <body>
@@ -22,7 +23,13 @@
                     <span class="nav__icon">Movie</span><span class="nav_icon--club">Club</span>
                 </div>
             </a>
+            <div class="nav__elementsContainer">
                 <button class="nav__button"><i class="nav__search fa-solid fa-magnifying-glass"></i></button>
+                <button class="nav__switcher">
+                    <span class="nav__element nav__element--sun"><i class="fa fa-sun"></i></span>
+                    <span class="nav__element nav__element--moon"><i class="fa fa-moon"></i></span>
+                </button>
+            </div>
         </nav>
     </header>
     <section class="search-bar">
@@ -75,7 +82,7 @@
     <main class="popular-movies">
         <div class="popular-movies__div data">
             <a href="#" class="popular-movies__link-poster"><img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/51NhVnF2s1L._AC_.jpg" alt="Aquí está el poster de una de las peliculas mejor valoradas." class="popular-movies__img"></a> 
-            <h3 class="popular-movies__title"><a href="">${movie.title}</a></h3>
+            <h3 class="popular-movies__title"><a href="" class="popular-movies__link">${movie.title}</a></h3>
             <p class="popular-movies__year">${year[0]}</p>
         </div>
     </main>

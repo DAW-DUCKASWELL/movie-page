@@ -33,7 +33,7 @@ const loadMovies = async () => {
                 let year = release_date.split('-')//-> para que solo nos muestre el año.
                 movies = movies + `<div class="popular-movies__div data">
                 <a href="#" class="popular-movies__link-poster"><img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Aquí está el poster de una de las peliculas mejor valoradas." class="popular-movies__img"></a> 
-                <h3 class="popular-movies__title"><a href="">${movie.title}</a></h3>
+                <h3 class="popular-movies__title"><a href="" class="popular-movies__link">${movie.title}</a></h3>
                 <p class="popular-movies__year">${year[0]}</p>
                 </div>`
             });

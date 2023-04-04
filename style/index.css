@@ -4,6 +4,9 @@
     --background-color-trans: #146c9480;
     --font-grey: #b6b6b6;
     --font-onWhite: #205E61;
+    --switcher-color: #343d5b;
+    --background-color-darkmode: #03141b ;
+    --font-color-darkmode :#3fa9da;
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +14,15 @@
 html, body{
     height: 100%;
 }
+body{
+    background-color: #fff;
+    transition: .2s ease all;
+}
+
+body.dark{
+    background-color: var(--background-color-darkmode);
+}
+
 a{
     text-decoration: none;
     margin: 0;
@@ -69,6 +81,53 @@ a{
 
 .nav__search:hover{
     color: var(--marked-text);
+}
+
+/*Botón con darkmode*/
+.nav__elementsContainer{
+    margin-right: 40px;
+    display: flex;
+    align-items: center; 
+}
+
+.nav__switcher{
+    background-color: var(--switcher-color);
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor:pointer;
+    display: flex;
+    outline: none;
+}
+.nav__switcher::after{
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px var(--switcher-color);
+}
+.nav__element{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+.nav__switcher.active{
+    background-color: var(--marked-text);
+    color: black;
+}
+.nav__switcher.active::after{
+    right: 0;
+    left: unset;
 }
 /*Barra de búsqueda de nav*/
 .search-bar{
@@ -283,7 +342,7 @@ a{
 
 /*Sección popolar movies */
 .popular-movies{
-    background-color: #fff;
+    background-color: transparent;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(auto-fill, 1fr);
@@ -296,9 +355,19 @@ a{
     padding: 10px;
     color: var(--font-onWhite);
 }
-.popular-movies__div a{
+
+body.dark .popular-movies__div{
+    color: var(--font-color-darkmode);
+}
+
+.popular-movies__link{
     color: var(--font-onWhite);
 }
+
+body.dark .popular-movies__link{
+    color: var(--font-color-darkmode);
+}
+
 .popular-movies__link-poster{
     display: flex;
     justify-content: center;
